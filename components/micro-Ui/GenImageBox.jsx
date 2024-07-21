@@ -17,12 +17,12 @@ export default function GenImageBox() {
             <RefreshIcon color="gray" />
           </div>
         </div>
-        <p className="text-xs text-gray-600">
+        <p className="text-sm text-gray-600">
           a promt to make a amazion image from the wonderland of
           amazing land , geen forest of witches and over the ice of madaghaskar and victry of queen eliziabeth and napolean bonapad
         </p>
       </div>
-      <GenImage srcarr={["/land/5.jpg", "/land/6.jpg", "/land/4.jpg", "/land/5.jpg", "/land/5.jpg", "/land/5.jpg", "/land/5.jpg", "/pot/2.jpg"]} />
+      <GenImage srcarr={["/land/5.jpg", "/land/6.jpg", "/land/5.jpg", "/land/6.jpg", "/land/5.jpg", "/land/6.jpg"]} />
     </div>
   )
 }

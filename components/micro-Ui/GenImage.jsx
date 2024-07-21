@@ -12,7 +12,7 @@ export default function GenImage({ srcarr = ["/land/5.jpg"] }) {
                 alt={`Image ${i + 1}`}
                 width={1000}
                 height={1000}
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full grid-cols-3"
               />
             </div>
           </div>
