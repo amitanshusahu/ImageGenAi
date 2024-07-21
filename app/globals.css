@@ -84,6 +84,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -95,69 +96,71 @@ body {
   }
 }
 
-@layer components{
-  .btn{
+@layer components {
+  .btn {
     @apply px-4 py-1 rounded-full
   }
 
-  .btn-lg{
+  .btn-lg {
     @apply py-2 px-5 rounded-2xl
   }
 }
 
-nav a{
+nav a {
   color: rgb(160, 160, 160);
 }
 
-.grad, .grad-text{
-  background: rgb(134,203,0);
-  background: linear-gradient(158deg, rgba(134,203,0,1) 0%, rgba(0,186,116,1) 100%);
+.grad,
+.grad-text {
+  background: rgb(134, 203, 0);
+  background: linear-gradient(158deg, rgba(134, 203, 0, 1) 0%, rgba(0, 186, 116, 1) 100%);
 }
 
-.grad-text{
+.grad-text {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.grad-black{
-  background: linear-gradient(158deg, rgba(19, 19, 19, 0.911) 0%, rgba(36, 36, 36, 0.911) 100%);
+.grad-black {
+  background: linear-gradient(158deg, rgba(14, 14, 14, 0.911) 0%, rgba(36, 36, 36, 0.911) 100%);
+  backdrop-filter: blur(10px);
 }
 
-hr{
+hr {
   background-color: rgba(128, 128, 128, 0.527);
   border: none;
   height: 1px;
 }
 
-.gen{
+.gen {
   border: 2px solid #111111;
   border-radius: 10px;
   background-color: #0f0f0fa1;
   overflow-x: hidden;
 }
 
-.glass{
+.glass {
   background-color: #4b4b4b3b;
 }
 
-.ht{
+.ht {
   height: calc(100% - 122px);
 }
 
-.in-transparent{
+.in-transparent {
   background-color: transparent;
   border: none;
   outline: none;
   padding: 10px;
 }
 
-.chatInput{
-  border: 2px solid  #111111;
+.chatInput {
+  border: 2px solid #111111;
   background-color: black;
   border-radius: 999px;
 }
 
-.hov:hover{
+.hov:hover {
   background-color: rgba(75, 75, 75, 0.233);
 }
 
@@ -179,4 +182,8 @@ hr{
 
 .grid-cols-4 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gray {
+  color: rgb(150, 150, 150);
 }

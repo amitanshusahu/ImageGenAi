@@ -4,8 +4,13 @@ export default function Hero() {
       <h1 className="text-8xl text-center">GENERATE YOUR
         <span className="grad-text"> IDEAS </span>
         INTO STUNNING <span className="grad-text">VISUALS</span></h1>
-      <div className="flex gap-4 m-12"> 
-        <button className="btn-lg grad text-xl font-bold">Get Started</button>
+      <div className="flex gap-4 m-12">
+        <a href="/home">
+          <button
+            className="btn-lg grad text-xl font-bold">
+            Get Started
+          </button>
+        </a>
         <div className="grad rounded-2xl">
           <button className="btn-lg bg-black m-[1px] text-xl font-bold">Watch Demo</button>
         </div>

@@ -8,19 +8,27 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useStore } from "../store/useStore"
 
 export default function PromptHelpwer() {
+  const promptHelperOptions = useStore((state) => state.promptHelperOptions);
+  const setPromptHelperOptions = useStore((state) => state.setPromptHelperOptions);
+
+  const handleOptionChange = (option, value) => {
+    setPromptHelperOptions({ [option]: value });
+  };
+
   return (
     <aside className="h-full w-full flex flex-col justify-between">
       <div>
         <div className="m-6 font-bold text-xl">Prompt Helper </div>
 
-        <div className="flex mx-6 my-3 justify-between items-center">
+        <div className="flex md:hidden mx-6 my-3 justify-between items-center">
           <h1 className="font-semibold">Technical</h1>
           <button className="btn p-0 m-0 text-green-500">reset</button>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="image.svg"
@@ -31,7 +39,7 @@ export default function PromptHelpwer() {
             />
             Image Count
           </p>
-          <Select>
+          <Select onValueChange={(val) => handleOptionChange('count', Number(val))}>
             <SelectTrigger className="w-32 glass rounded-md">
               <SelectValue placeholder="Count" />
             </SelectTrigger>
@@ -48,7 +56,7 @@ export default function PromptHelpwer() {
           </Select>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="maximize-2.svg"
@@ -59,7 +67,7 @@ export default function PromptHelpwer() {
             />
             Aspect Ratio
           </p>
-          <Select>
+          <Select onValueChange={(val) => handleOptionChange('ratio', val)}>
             <SelectTrigger className="w-32 glass rounded-md">
               <SelectValue placeholder="Ratio" />
             </SelectTrigger>
@@ -67,16 +75,13 @@ export default function PromptHelpwer() {
               <SelectGroup>
                 <SelectLabel>Aspect Ratio</SelectLabel>
                 <SelectItem value="16:9">16:9</SelectItem>
-                <SelectItem value="4:3">4:3</SelectItem>
                 <SelectItem value="1:1">1:1</SelectItem>
-                <SelectItem value="3:2">3:2</SelectItem>
-                <SelectItem value="21:9">21:9</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="x.svg"
@@ -104,7 +109,7 @@ export default function PromptHelpwer() {
           </Select>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="trending-up.svg"
@@ -131,7 +136,7 @@ export default function PromptHelpwer() {
           </Select>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="edit-2.svg"
@@ -159,12 +164,12 @@ export default function PromptHelpwer() {
           </Select>
         </div>
 
-        <div className="flex mx-6 mb-3 mt-6 justify-between items-center">
+        <div className="flex md:hidden mx-6 mb-3 mt-6 justify-between items-center">
           <h1 className="font-semibold">Ai Image Settings</h1>
           <button className="btn p-0 m-0 text-green-500">reset</button>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="settings.svg"
@@ -192,7 +197,7 @@ export default function PromptHelpwer() {
           </Select>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="settings.svg"
@@ -221,7 +226,7 @@ export default function PromptHelpwer() {
           </Select>
         </div>
 
-        <div className="flex mx-6 mt-3 justify-between items-center">
+        <div className="flex md:flex-col lg:flex-row mx-6 mt-3 justify-between items-center">
           < p className="mb-0 rounded-md text-left text-sm flex gap-2 py-2">
             <Image
               src="settings.svg"

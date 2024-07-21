@@ -8,7 +8,41 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+import {useStore} from '../../store/useStore'
+
 export default function ChatInput() {
+
+  const chatInput = useStore((state) => state.chatInput);
+  const setChatInput = useStore((state) => state.setChatInput);
+  const promptHelperOptions = useStore((state) => state.promptHelperOptions);
+  const addChatMessage = useStore((state) => state.addChatMessage);
+
+  const handleChange = (e) => {
+    setChatInput(e.target.value);
+  };
+
+  const handleSubmit = async () => {
+    const payload = {
+      ratio: promptHelperOptions.ratio,
+      count: promptHelperOptions.count,
+      prompt: chatInput
+    };
+
+    const response = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+    console.log(data);
+    if(data.status){
+      addChatMessage(data); 
+    }
+  };
+
   return (
     <div className="m-3 flex justify-between items-center chatInput">
       <div className="flex items-center justify-center">
@@ -32,9 +66,9 @@ export default function ChatInput() {
         </div>
       </div>
       <div className="w-full">
-        <input type="text" placeholder="Describe your image here" className="w-full in-transparent" />
+        <input type="text" placeholder="Describe your image here" className="w-full in-transparent"  onChange={handleChange}/>
       </div>
-      <div><button className="btn grad m-2">generate</button></div>
+      <div><button className="btn grad m-2" onClick={handleSubmit}>generate</button></div>
     </div>
   )
 }

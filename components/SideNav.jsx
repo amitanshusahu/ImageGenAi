@@ -19,23 +19,23 @@ export default function SideNav() {
             className="invert m-7"
           />
           <div className="flex flex-col">
-            <button className="btn m-3 mb-0 grad rounded-md text-left hov flex gap-2 py-2">
+            <button className="btn m-3 mb-0 grad rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold">
               <GenerateIcon color="white" />
               Generate
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
               <ImageIcon color="gray" />
               My Image
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
               <ExploreIcon color="gray" />
               Explore
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
               <SettingIcon color="gray" />
               Settings
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
               <MessageIcon color="gray" />
               Support
             </button>
@@ -43,7 +43,7 @@ export default function SideNav() {
           <hr className="m-7" />
         </div>
 
-        <div className="m-6">
+        <div className="m-6 mb-0">
           <Profile />
         </div>
       </div>

@@ -1,0 +1,9 @@
+### Test Server
+
+POST http://localhost:3000/api/generate
+Content-Type: application/json
+
+{
+    "count": "2",
+    "ratio": "1:1"
+}
