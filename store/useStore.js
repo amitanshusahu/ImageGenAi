@@ -16,4 +16,6 @@ export const useStore = create((set) => ({
   addChatMessage: (message) => set((state) => ({
     chatBody: [...state.chatBody, message],
   })),
+  navigation: '',
+  setNavigation: (input) => set({ navigator: input }),
 }));

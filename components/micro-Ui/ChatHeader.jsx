@@ -1,9 +1,8 @@
 import Image from "next/image"
-import { cn } from "@/lib/utils"
 import { Slider } from "@/components/ui/slider"
 
 
-export default function ChatHeader() {
+export default function ChatHeader({genload}) {
   return (
     <div className="glass sticky top-0 left-0">
       <div className="flex justify-between items-center p-3">
@@ -13,9 +12,9 @@ export default function ChatHeader() {
             alt="icon"
             width={20}
             height={20}
-            className="invert"
+            className={`invert ${genload ? 'spin': ''}`}
           />
-          <span className=""> </span>
+          <span className="text-sm text-gray-500">{genload ? 'Generating...': ''}</span>
         </div>
         <div className="flex justify-center items-center gap-2">
           <Image

@@ -10,7 +10,7 @@ import {
 
 import {useStore} from '../../store/useStore'
 
-export default function ChatInput() {
+export default function ChatInput({setGenload}) {
 
   const chatInput = useStore((state) => state.chatInput);
   const setChatInput = useStore((state) => state.setChatInput);
@@ -22,6 +22,7 @@ export default function ChatInput() {
   };
 
   const handleSubmit = async () => {
+    setGenload(true);
     const payload = {
       ratio: promptHelperOptions.ratio,
       count: promptHelperOptions.count,
@@ -40,6 +41,7 @@ export default function ChatInput() {
     console.log(data);
     if(data.status){
       addChatMessage(data); 
+      setGenload(false);
     }
   };
 

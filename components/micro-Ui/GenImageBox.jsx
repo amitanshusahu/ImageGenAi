@@ -28,7 +28,7 @@ export default function GenImageBox({res}) {
           {res.prompt}
         </p>
       </div>
-      <GenImage srcarr={res?.images} />
+      <GenImage srcarr={res?.images} ratio={res.ratio} />
     </div>
     :null 
   )

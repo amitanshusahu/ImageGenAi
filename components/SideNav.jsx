@@ -6,7 +6,7 @@ import ImageIcon from "@/assets/ImageIcon"
 import SettingIcon from "@/assets/SettingIcon"
 import MessageIcon from "@/assets/MessageIcon"
 
-export default function SideNav() {
+export default function SideNav({ setCurrentView }) {
   return (
     <aside className="h-full w-full">
       <div className="flex flex-col justify-between h-full mr-3">
@@ -19,23 +19,28 @@ export default function SideNav() {
             className="invert m-7"
           />
           <div className="flex flex-col">
-            <button className="btn m-3 mb-0 grad rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold">
+            <button className="btn m-3 mb-0 grad rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold"
+              onClick={() => setCurrentView('Generate')}>
               <GenerateIcon color="white" />
               Generate
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray"
+              onClick={() => setCurrentView('MyImage')}>
               <ImageIcon color="gray" />
               My Image
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray"
+              onClick={() => setCurrentView('Explore')}>
               <ExploreIcon color="gray" />
               Explore
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray"
+              onClick={() => setCurrentView('Settings')}>
               <SettingIcon color="gray" />
               Settings
             </button>
-            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray">
+            <button className="btn m-3 mb-0 rounded-md text-left hov flex gap-2 py-2 text-sm font-semibold gray"
+              onClick={() => setCurrentView('Support')}>
               <MessageIcon color="gray" />
               Support
             </button>
