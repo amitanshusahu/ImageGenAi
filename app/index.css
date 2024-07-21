@@ -53,7 +53,7 @@ body {
   }
 
   .dark {
-    --background: #0f0f0fa1;
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -69,7 +69,7 @@ body {
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: #111111;
+    --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
     --chart-1: 220 70% 50%;
@@ -130,14 +130,15 @@ hr{
 }
 
 .gen{
-  border: 2px solid #111111;
+  border: 2px solid #202020;
   border-radius: 10px;
-  background-color: #0f0f0fa1;
+  background-color: #1b1b1ba1;
   overflow-x: hidden;
 }
 
 .glass{
-  background-color: #4b4b4b3b;
+  background-color: rgba(75, 75, 75, 0.233);
+  backdrop-filter: blur(5px);
 }
 
 .ht{
@@ -145,22 +146,12 @@ hr{
 }
 
 .in-transparent{
-  background-color: transparent;
-  border: none;
-  outline: none;
+  all:unset;
   padding: 10px;
 }
 
 .chatInput{
-  border: 2px solid  #111111;
+  border: 2px solid rgb(29, 29, 29);
   background-color: black;
   border-radius: 999px;
-}
-
-.hov:hover{
-  background-color: rgba(75, 75, 75, 0.233);
-}
-
-.preset {
-  width: calc(100% - 40px);
 }
