@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(utils.css);
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -105,5 +103,48 @@ body {
 
   .btn-lg {
     @apply py-2 px-5 rounded-2xl
+  }
+}
+
+.screen{
+  display: gird;
+}
+.mobonly{
+  display: none !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .mob, .screen{
+    display: none !important;
+  }
+  .mobonly{
+    display: block !important;
+  }
+  .mobnav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .mobgen{
+    /* grid-template-rows: 100% 100%; */
+    grid-template-columns: auto;
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+  .mobchat{
+    min-height: 80vh;
+  }
+  .ht{
+    min-height: 600px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .lappro .name{
+    font-size: 12px !important;
+  }
+  .lappro .img-container{
+    width: 30px;
+    height: 30px;
   }
 }

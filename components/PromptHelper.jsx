@@ -23,7 +23,7 @@ export default function PromptHelpwer() {
       <div>
         <div className="m-6 font-bold text-xl">Prompt Helper </div>
 
-        <div className="flex md:hidden mx-6 my-3 justify-between items-center">
+        <div className="flex md:hidden lg:flex mx-6 my-3 justify-between items-center">
           <h1 className="font-semibold">Technical</h1>
           <button className="btn p-0 m-0 text-green-500">reset</button>
         </div>
@@ -46,11 +46,11 @@ export default function PromptHelpwer() {
             <SelectContent>
               <SelectGroup>
                 <SelectLabel>Image Count</SelectLabel>
-                <SelectItem value="1">1</SelectItem>
                 <SelectItem value="2">2</SelectItem>
                 <SelectItem value="3">3</SelectItem>
                 <SelectItem value="4">4</SelectItem>
-                <SelectItem value="5">5</SelectItem>
+                <SelectItem value="6">6</SelectItem>
+                <SelectItem value="8">8</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
@@ -164,7 +164,7 @@ export default function PromptHelpwer() {
           </Select>
         </div>
 
-        <div className="flex md:hidden mx-6 mb-3 mt-6 justify-between items-center">
+        <div className="flex md:hidden lg:flex mx-6 mb-3 mt-6 justify-between items-center">
           <h1 className="font-semibold">Ai Image Settings</h1>
           <button className="btn p-0 m-0 text-green-500">reset</button>
         </div>

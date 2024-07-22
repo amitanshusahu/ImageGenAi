@@ -1,11 +1,8 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-// import { useSession } from "next-auth/react";
 
 export default function Home() {
-  // const session = useSession()
-  // console.log(session);
   return (
     <div>
       <main className="max-w-[1444px] m-auto">

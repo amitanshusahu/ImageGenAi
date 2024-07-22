@@ -17,7 +17,7 @@ export async function POST(req) {
   // Authorization
   const session = await getServerSession(authOptions);
   if (!session) {
-    return new Response(JSON.stringify({ message: 'Unauthorized', status: false }), { status: 401 });
+    return new Response(JSON.stringify({ msg: 'Unauthorized', status: false }), { status: 401 });
   }
 
   const uid = session.user.id;
@@ -26,7 +26,7 @@ export async function POST(req) {
   // Rate limit
   const { success } = await ratelimit.limit(uid);
   if (!success) {
-    return new Response(JSON.stringify({ message: 'Rate limit exceeded', status: false }), { status: 429 });
+    return new Response(JSON.stringify({ msg: 'Rate limit exceeded', status: false }), { status: 429 });
   }
 
   // Parse the request payload
@@ -43,13 +43,13 @@ export async function POST(req) {
     return NextResponse.json({ images: generatedImages, prompt: prompt, count, ratio, status: true });
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ message: 'Internal Server Error', status: false }), { status: 500 });
+    return new Response(JSON.stringify({ msg: 'Internal Server Error', status: false }), { status: 500 });
   }
 }
 
 function handleGeneration(ratio, count) {
-  const landarr = ["/land/1.jpg", "/land/2.jpg", "/land/3.jpg", "/land/4.jpg", "/land/5.jpg", "/land/6.jpg", "/land/7.jpg", "/land/8.jpg"];
-  const potarr = ["/pot/1.jpg", "/pot/2.jpg", "/pot/3.jpg", "/pot/4.jpg", "/pot/5.jpg"];
+  const landarr = ["/land/1.jpg", "/land/2.jpg", "/land/3.jpg", "/land/4.jpg", "/land/5.jpg", "/land/6.jpg", "/land/7.jpg", "/land/8.jpg", "/land/9.jpg", "/land/9.jpg"];
+  const potarr = ["/pot/1.jpg", "/pot/2.jpg", "/pot/3.jpg", "/pot/4.jpg", "/pot/5.jpg", "/pot/6.jpg", "/pot/7.jpg", "/pot/8.jpg", "/pot/9.jpg", "/pot/10.jpg", "/pot/11.jpg"];
 
   let sourceArray;
 

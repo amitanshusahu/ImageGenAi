@@ -18,7 +18,7 @@ export default function GenImageBox({res}) {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className="grad p-1 rounded-md"><GenerateIcon color="white" width="24" height="24" /></div>
-            <h3 className="text-sm font-semibold">Filter, StableDiffion xl, {`${res.count} X ${res.ratio}`}</h3>
+            <h3 className="text-sm font-semibold">Filter, StableDiffion, {`${res.count} X ${res.ratio}`}</h3>
           </div>
           <div>
             <RefreshIcon color="gray" />

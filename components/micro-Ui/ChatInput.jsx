@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useToast } from "@/components/ui/use-toast"
 
 import {useStore} from '../../store/useStore'
 
@@ -17,6 +18,8 @@ export default function ChatInput({setGenload}) {
   const promptHelperOptions = useStore((state) => state.promptHelperOptions);
   const addChatMessage = useStore((state) => state.addChatMessage);
 
+  const { toast } = useToast();
+
   const handleChange = (e) => {
     setChatInput(e.target.value);
   };
@@ -24,8 +27,8 @@ export default function ChatInput({setGenload}) {
   const handleSubmit = async () => {
     setGenload(true);
     const payload = {
-      ratio: promptHelperOptions.ratio,
-      count: promptHelperOptions.count,
+      ratio: promptHelperOptions.ratio || '1:1',
+      count: promptHelperOptions.count || 3,
       prompt: chatInput
     };
 
@@ -41,6 +44,15 @@ export default function ChatInput({setGenload}) {
     console.log(data);
     if(data.status){
       addChatMessage(data); 
+      setGenload(false);
+    }
+    else{
+      (() => {
+        toast({
+          title: data.msg,
+          description: "There was a problem with your request.",
+        })
+      })();
       setGenload(false);
     }
   };

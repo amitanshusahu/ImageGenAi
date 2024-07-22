@@ -5,6 +5,7 @@ import SideNav from "@/components/SideNav";
 import { useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import MobileView from "@/components/MobileView";
 
 const DynamicComponent = ({ component }) => {
   const Component = dynamic(() => import(`@/components/${component}`));
@@ -12,14 +13,14 @@ const DynamicComponent = ({ component }) => {
 };
 
 export default function Home() {
-  // const { data: session } = useSession();
-  // const router = useRouter();
+  const { data: session } = useSession();
+  const router = useRouter();
 
-  // useEffect(() => {
-  //   if (!session) {
-  //     router.push('/api/auth/signin');
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!session) {
+      router.push('/api/auth/signin');
+    }
+  }, []);
 
   const [currentView, setCurrentView] = useState('Generate');
 
@@ -29,9 +30,12 @@ export default function Home() {
 
 
   return (
-    <div className="w-screen h-screen p-3 overflow-hidden grid md:grid-cols-[20%_80%] lg:grid-cols-[15%_85%]">
-      <SideNav setCurrentView= {setCurrentView} />
-      <DynamicComponent component={currentView} />
-    </div>
+    <>
+      <MobileView className="mobonly"/>
+      <div className="w-screen h-screen p-3 overflow-hidden grid md:grid-cols-[20%_80%] lg:grid-cols-[15%_85%] screen">
+        <SideNav setCurrentView={setCurrentView} />
+        <DynamicComponent component={currentView} />
+      </div>
+    </>
   )
 }

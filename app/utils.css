@@ -85,6 +85,25 @@ hr {
   animation: spin 1s linear infinite;
 }
 
+.pop{
+  animation: pop 0.3s ease;
+  transition: scale 0.3s ease;
+}
+
+.skeleton{
+  animation: blink 1s linear alternate infinite;
+}
+
+@keyframes blink {
+  from {background-color : rgba(10, 10, 10, 0.589);}
+  to { background-color: rgba(29, 29, 29, 0.452);}
+}
+
+@keyframes pop {
+  from {scale : 0;}
+  to { scale: 1;}
+}
+
 @keyframes spin {
   from{
     transform: rotate(0deg);
