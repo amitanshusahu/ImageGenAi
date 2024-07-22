@@ -12,7 +12,7 @@ export default function MyImages() {
       const res = await userImages.json();
       
       if(res.status)
-      setImages(res.images.slice(0, 10) || []);
+      setImages(res.images || []);
 
     };
 
