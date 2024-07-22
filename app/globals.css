@@ -156,3 +156,19 @@ body {
     height: 30px;
   }
 }
+
+@media only screen and (max-width: 600px){
+  .navbar{
+    font-size: smaller;
+    margin: 20px;
+  }
+  .hero{
+    margin-top: 50px;
+  }
+  .hero h1{
+    font-size: 60px;
+  }
+  .mob600{
+    display: none;
+  }
+}

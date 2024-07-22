@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center lg:mt-32 md:mt-24">
+    <div className="flex flex-col items-center justify-center lg:mt-32 md:mt-24 sm:mt-12 hero">
       <h1 className="text-8xl text-center">GENERATE YOUR
         <span className="grad-text"> IDEAS </span>
         INTO STUNNING <span className="grad-text">VISUALS</span></h1>

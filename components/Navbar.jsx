@@ -19,14 +19,14 @@ export default function Navbar(){
   }, [session, router]);
 
   return (
-    <nav className="flex items-center justify-between p-3 grad-black mt-12 rounded-full">
+    <nav className="flex items-center justify-between p-3 grad-black mt-12 sm:m-6 rounded-full navbar">
       <div>
         <Image
           src="vercel.svg"
           alt="Picture of the author"
           width={70}
           height={50}
-          className="invert mx-5"
+          className="invert mx-5 mob600"
         />
         </div>
       <div className="flex gap-4">

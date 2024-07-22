@@ -14,7 +14,7 @@ export default function LoginDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="btn font-semibold">Login</button>
+        <button className="btn font-semibold mob600">Login</button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] lg:min-w-[700px] lg:h-[600px]">
 
