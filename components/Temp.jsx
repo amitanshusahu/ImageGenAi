@@ -25,7 +25,7 @@ const ChatBody = () => {
           ))}
     </div>
   );
-};
+}; 
 
 function ChatInput() {
   return (
